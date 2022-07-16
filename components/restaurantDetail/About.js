@@ -1,14 +1,11 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
-import { SPOONACULAR_API_KEY } from '@env'
-
 
 
 const image = "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudCUyMGZvb2R8ZW58MHx8MHx8&w=1000&q=80";
 const title = "Farmhouse Kitchen Thai Cuisine";
 const description = "Thai | Comfort Food . $$ 🍲  4.5 ⭐ (290+)";
 
-console.log("das ", SPOONACULAR_API_KEY);
 
 const About = () => {
     return (

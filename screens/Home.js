@@ -7,7 +7,7 @@ import RestaurantItems from '../components/home/RestaurantItems'
 import { Divider } from 'react-native-elements'
 import BottomTabs from '../components/home/BottomTabs'
 
-const home = () => {
+const Home = ({ navigation }) => {
 
     const [restaurantData, setRestaurantData] = useState([])
     const [city, setCity] = useState("")
@@ -47,7 +47,7 @@ const home = () => {
             </View>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <Categories />
-                <RestaurantItems restaurantData={restaurantData} />
+                <RestaurantItems restaurantData={restaurantData} navigation={navigation} />
             </ScrollView>
 
             <Divider width={1} />
@@ -56,4 +56,4 @@ const home = () => {
     )
 }
 
-export default home
+export default Home

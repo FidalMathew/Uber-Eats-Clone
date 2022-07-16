@@ -2,9 +2,9 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
-const RestaurantItem = (props) => {
+const RestaurantItem = ({ navigation, ...props }) => {
     return (
-        <TouchableOpacity activeOpacity={1} style={{ marginBottom: 30 }}>
+        <TouchableOpacity activeOpacity={1} style={{ marginBottom: 30 }} onPress={() => navigation.navigate('RestaurantDetail')}>
             {
                 props.restaurantData.map((restaurant, index) => (
                     <View key={index} style={{
