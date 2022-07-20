@@ -2,17 +2,15 @@ import { View, Text, Image } from 'react-native'
 import React from 'react'
 
 
-const image = "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVzdGF1cmFudCUyMGZvb2R8ZW58MHx8MHx8&w=1000&q=80";
-const title = "Farmhouse Kitchen Thai Cuisine";
-const description = "Thai | Comfort Food . $$ 🍲  4.5 ⭐ (290+)";
+const About = (props) => {
 
+    const { image, name, rating } = props.route.params;
 
-const About = () => {
     return (
         <View>
             <RestaurantImage image={image} />
-            <RestaurantTitle title={title} />
-            <RestaurantDescription description={description} />
+            <RestaurantTitle title={name} />
+            <RestaurantDescription rating={rating} />
         </View>
     )
 }
@@ -35,12 +33,35 @@ const RestaurantTitle = (props) => (
 )
 
 const RestaurantDescription = (props) => (
-    <Text
-        style={{
-            fontSize: 15.5,
-            fontWeight: "400",
-            marginTop: 10,
-            marginHorizontal: 15
-        }}
-    >{props.description}</Text>
+
+    <View style={{
+        flexDirection: "row"
+    }}>
+        <Text
+            style={{
+                fontSize: 15.5,
+                fontWeight: "400",
+                marginTop: 10,
+                marginHorizontal: 15,
+                flexDirection: "column",
+            }}
+        > Count the memories, not the calories</Text>
+        <RestaurantRating rating={props.rating} />
+    </View>);
+
+
+const RestaurantRating = (props) => (
+    <View style={{
+        backgroundColor: "#ffb405",
+        height: 30,
+        width: 30,
+        alignItems: 'center',
+        justifyContent: "center",
+        borderRadius: 15,
+
+    }}>
+        <Text style={{
+            color: "white"
+        }}>{props.rating}</Text>
+    </View>
 )
